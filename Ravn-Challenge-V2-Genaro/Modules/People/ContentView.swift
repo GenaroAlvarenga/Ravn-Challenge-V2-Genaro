@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    let request = PeopleViewModel()
     var body: some View {
         Text("Hello, world!")
             .padding()
+        Button("Request") {
+            request.fetchPeople()
+        }
     }
 }
 
