@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let request = AllPeopleRequest()
+    let request = PeopleViewModel()
     var body: some View {
         Text("Hello, world!")
             .padding()
