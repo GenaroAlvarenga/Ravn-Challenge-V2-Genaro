@@ -11,6 +11,8 @@ import CombineExt
 
 enum CustomError: Error {
     case noConnection
+    case emptyData
+    case custom(String)
 }
 
 class PeopleViewModel: ObservableObject {
