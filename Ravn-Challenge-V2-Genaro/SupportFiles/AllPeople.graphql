@@ -1,0 +1,21 @@
+query AllPeople($number: Int, $cursor: String) {
+  allPeople(first: $number after:$cursor) {
+    people {
+      id
+      name
+      species {
+        name
+        id
+      }
+    }
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+
+
