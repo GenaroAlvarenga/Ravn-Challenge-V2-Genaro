@@ -8,10 +8,14 @@
 import Foundation
 import Combine
 
-class PeopleViewModel {
-    private var people = [AllPeopleQuery.Data.AllPerson.Person]()
-    private var isLoading = false
-    private var subscriptions = Set<AnyCancellable>()
+enum CustomError: Error {
+    case noConnection
+}
+
+class PeopleViewModel: ObservableObject {
+    @Published var people = [StarWarsPerson]()
+    @Published var isLoading = false
+    @Published var error: Error = CustomError.noConnection
     private let peopleService: PopleServiceType
     
     init(peopleService: PopleServiceType = PopleService()) {
@@ -27,17 +31,17 @@ class PeopleViewModel {
     
     // Example of service
     func getAllPeople() {
-        peopleService.getPeople().sink { [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .finished:
-                print("Nothing")
-            }
-            self?.isLoading.toggle()
-        } receiveValue: { [weak self] people in
-            self?.people.append(contentsOf: people)
-        }
-        .store(in: &subscriptions)
+//        peopleService.getPeople().sink { [weak self] result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .finished:
+//                print("Nothing")
+//            }
+//            self?.isLoading.toggle()
+//        } receiveValue: { [weak self] people in
+//            self?.people.append(contentsOf: people)
+//        }
+//        .store(in: &subscriptions)
     }
 }
