@@ -15,8 +15,27 @@ struct StarWarsPersonDetail {
     let birthYear: String?
     let vehicles: [Vehicle]
     
-    struct Vehicle {
+    var details: [PersonDetail] {
+        var personDetails = [PersonDetail?]()
+        personDetails.append(PersonDetail.getDetail(.eyes, value: eyeColor))
+        personDetails.append(PersonDetail.getDetail(.hair, value: hairColor))
+        personDetails.append(PersonDetail.getDetail(.skin, value: skinColor))
+        personDetails.append(PersonDetail.getDetail(.birth, value: birthYear))
+        return personDetails.compactMap({ $0 })
+    }
+ 
+    struct Vehicle: Identifiable {
+        let id = UUID()
         let name: String
+    }
+    
+    init() {
+        self.name = ""
+        self.eyeColor = nil
+        self.hairColor = nil
+        self.skinColor = nil
+        self.birthYear = nil
+        self.vehicles = []
     }
     
     init(_ personDetail: PersonDetailQuery.Data.Person) {
@@ -34,6 +53,45 @@ struct StarWarsPersonDetail {
             }
         } else {
             self.vehicles = []
+        }
+    }
+}
+
+// struct used in PeopleDetailView section
+struct PersonDetail: Identifiable {
+    let id = UUID()
+    let type: String
+    let name: String
+    
+    private init(type: String, name: String) {
+        self.type = type
+        self.name = name
+    }
+
+    static func getDetail(_ type: PersonDetailType, value: String?) -> PersonDetail? {
+        if let value = value {
+            return PersonDetail(type: type.name, name: value)
+        }
+        return nil
+    }
+    
+    enum PersonDetailType {
+        case eyes
+        case hair
+        case skin
+        case birth
+        
+        var name: String {
+            switch self {
+            case .birth:
+                return "Birth Year"
+            case .skin:
+                return "Skin Color"
+            case .hair:
+                return "Hair Color"
+            case .eyes:
+                return "Eye Color"
+            }
         }
     }
 }

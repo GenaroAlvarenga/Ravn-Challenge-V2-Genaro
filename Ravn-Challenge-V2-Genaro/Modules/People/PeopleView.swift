@@ -43,7 +43,8 @@ struct PersonCell: View {
 
     var body: some View {
         NavigationLink(
-            destination: Text(person.name)) {
+            destination: PeopleDetailView(viewModel: PeopleDetailViewModel(peopleID: person.id),
+                                          name: person.name)) {
             HStack {
                 VStack(alignment: .leading) {
                     Text(person.name)
