@@ -8,6 +8,7 @@
 import Foundation
 
 struct StarWarsPersonDetail {
+
     let name: String
     let eyeColor: String?
     let hairColor: String?
@@ -36,6 +37,15 @@ struct StarWarsPersonDetail {
         self.skinColor = nil
         self.birthYear = nil
         self.vehicles = []
+    }
+    
+    init(name: String, eyeColor: String?, hairColor: String?, skinColor: String?, birthYear: String?, vehicles: [StarWarsPersonDetail.Vehicle]) {
+        self.name = name
+        self.eyeColor = eyeColor
+        self.hairColor = hairColor
+        self.skinColor = skinColor
+        self.birthYear = birthYear
+        self.vehicles = vehicles
     }
     
     init(_ personDetail: PersonDetailQuery.Data.Person) {
