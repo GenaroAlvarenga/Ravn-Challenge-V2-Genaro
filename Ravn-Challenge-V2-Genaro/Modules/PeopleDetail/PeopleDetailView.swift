@@ -10,7 +10,7 @@ import SwiftUI
 struct PeopleDetailView: View {
     @ObservedObject var viewModel: PeopleDetailViewModel
     let name: String
-
+    
     var body: some View {
         ZStack {
             PeopleDetailListView(detail: viewModel.detail)
@@ -37,13 +37,14 @@ struct PeopleDetailView_Previews: PreviewProvider {
 
 struct PeopleDetailListView: View {
     let detail: StarWarsPersonDetail
-
     var body: some View {
         List {
             Section(header: Text("General Information")) {
                 ForEach(detail.details) { detail in
                     HStack {
                         Text(detail.type)
+                            .bold()
+                            .foregroundColor(.gray)
                         Spacer()
                         Text(detail.name)
                             .bold()
@@ -55,6 +56,8 @@ struct PeopleDetailListView: View {
                     ForEach(detail.vehicles) { vehicle in
                         HStack {
                             Text(vehicle.name)
+                                .bold()
+                                .foregroundColor(.gray)
                             Spacer()
                         }
                     }

@@ -30,7 +30,8 @@ struct PeopleView: View {
                     LoadingView()
                 }
             }
-            .navigationTitle("People of Star Wars")
+            .navigationBarTitle("People of Star Wars",
+                                displayMode: .inline)
             .onAppear(perform: { viewModel.fetchPeople() })
         }
         
@@ -64,6 +65,9 @@ struct LoadingView: View {
         HStack {
             Spacer()
             ProgressView()
+            Text("Loading")
+                .foregroundColor(.gray)
+                .padding(.leading, 10)
             Spacer()
         }
     }
