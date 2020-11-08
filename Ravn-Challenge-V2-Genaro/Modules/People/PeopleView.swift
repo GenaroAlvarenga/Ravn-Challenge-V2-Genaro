@@ -30,7 +30,7 @@ struct PeopleView: View {
                     LoadingView()
                 }
             }
-            .navigationBarTitle("People of Star Wars",
+            .navigationBarTitle(Localizable.peopleHeader,
                                 displayMode: .inline)
             .onAppear(perform: { viewModel.fetchPeople() })
         }

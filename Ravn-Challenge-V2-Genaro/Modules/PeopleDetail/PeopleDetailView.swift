@@ -18,9 +18,9 @@ struct PeopleDetailView: View {
                 ProgressView()
             }
         }.alert(isPresented:  $viewModel.showAlert) {
-            Alert(title: Text("Error"),
+            Alert(title: Text(Localizable.error),
                   message: Text(viewModel.error?.localizedDescription ?? ""),
-                  dismissButton: .default(Text("Close")))
+                  dismissButton: .default(Text(Localizable.close)))
         }
         .onAppear(perform: {
             viewModel.fetchPeopleRequest.accept()
@@ -47,7 +47,7 @@ struct PeopleDetailListView: View {
     
     var body: some View {
         List {
-            Section(header: CustomHeaderView(text: "General Information")) {
+            Section(header: CustomHeaderView(text: Localizable.detailGeneralTitle)) {
                 ForEach(detail.details) { detail in
                     HStack {
                         Text(detail.type)
@@ -60,7 +60,7 @@ struct PeopleDetailListView: View {
                 }
             }
             if !detail.vehicles.isEmpty {
-                Section(header: CustomHeaderView(text: "Vehicles")) {
+                Section(header: CustomHeaderView(text: Localizable.detailVehiclesTitle)) {
                     ForEach(detail.vehicles) { vehicle in
                         HStack {
                             Text(vehicle.name)
