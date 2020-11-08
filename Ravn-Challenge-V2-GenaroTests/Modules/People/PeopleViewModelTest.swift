@@ -60,7 +60,7 @@ extension PeopleViewModelTest {
         case mock
     }
 
-    struct PopleServiceMock: PopleServiceType {
+    struct PopleServiceMock: PeopleServiceType {
         var cantLoadMore: Bool = true
         let expectedResult: [StarWarsPerson]
         
@@ -71,7 +71,7 @@ extension PeopleViewModelTest {
         }
     }
     
-    struct PopleServiceErrorMock: PopleServiceType {
+    struct PopleServiceErrorMock: PeopleServiceType {
         var cantLoadMore: Bool = true
         let expectedResult: [StarWarsPerson]
         

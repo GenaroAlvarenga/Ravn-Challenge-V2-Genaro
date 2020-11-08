@@ -7,13 +7,13 @@
 
 import Combine
 
-protocol PopleServiceType {
+protocol PeopleServiceType {
     var cantLoadMore: Bool { get set }
     
     func getPeople() ->  AnyPublisher<[StarWarsPerson], Error>
 }
 
-class PopleService: PopleServiceType {
+class PeopleService: PeopleServiceType {
     var cantLoadMore: Bool = true
     private var lastConnection: AllPeopleQuery.Data.AllPerson.PageInfo?
     private let requester: RequesterType

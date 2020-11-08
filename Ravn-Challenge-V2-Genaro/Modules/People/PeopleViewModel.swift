@@ -20,12 +20,12 @@ class PeopleViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: Error = CustomError.noConnection
     @Published var cantLoadMore = true
-    private let peopleService: PopleServiceType
+    private let peopleService: PeopleServiceType
     
     let fetchPeopleRequest = PassthroughRelay<Void>()
     private var subscriptions = Set<AnyCancellable>()
     
-    init(peopleService: PopleServiceType = PopleService()) {
+    init(peopleService: PeopleServiceType = PeopleService()) {
         self.peopleService = peopleService
         
         let fetchPeopleResult = fetchPeopleRequest
