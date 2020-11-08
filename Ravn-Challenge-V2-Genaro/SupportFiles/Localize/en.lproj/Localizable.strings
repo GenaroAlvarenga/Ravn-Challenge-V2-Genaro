@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Ravn-Challenge-V2-Genaro
+
+  Created by Genaro Alvarenga on 11/8/20.
+  
+*/
+"People.Header" = "People of Star Wars";
+"Loading" = "Loading";
+"Error" = "Error";
+"Close" = "Close";
+"Detail.General.Title" = "General Information";
+"Detail.Vehicles.Title" = "Vehicles";

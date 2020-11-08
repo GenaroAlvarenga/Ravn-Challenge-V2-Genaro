@@ -27,6 +27,8 @@
 		ED5E584B25574026002CCE1F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E584A25574026002CCE1F /* API.swift */; };
 		ED5E5851255741E6002CCE1F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E5850255741E6002CCE1F /* Network.swift */; };
 		ED5E585725574263002CCE1F /* AllPeopleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E585625574263002CCE1F /* AllPeopleRequest.swift */; };
+		ED7BA750255893E1006DF13A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED7BA752255893E1006DF13A /* Localizable.strings */; };
+		ED7BA758255894A0006DF13A /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BA757255894A0006DF13A /* Localizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		ED5E584A25574026002CCE1F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ED5E5850255741E6002CCE1F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		ED5E585625574263002CCE1F /* AllPeopleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPeopleRequest.swift; sourceTree = "<group>"; };
+		ED7BA751255893E1006DF13A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED7BA757255894A0006DF13A /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,7 @@
 		ED27E06725587176007B98DF /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				ED7BA75625589485006DF13A /* Localize */,
 				ED5E584A25574026002CCE1F /* API.swift */,
 				ED5E584525573F01002CCE1F /* schema.json */,
 				ED5E584625573FBC002CCE1F /* AllPeople.graphql */,
@@ -286,6 +291,15 @@
 				ED5E585625574263002CCE1F /* AllPeopleRequest.swift */,
 			);
 			path = Queries;
+			sourceTree = "<group>";
+		};
+		ED7BA75625589485006DF13A /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				ED7BA752255893E1006DF13A /* Localizable.strings */,
+				ED7BA757255894A0006DF13A /* Localizable.swift */,
+			);
+			path = Localize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED54A59125562AA000A5175D /* Preview Assets.xcassets in Resources */,
+				ED7BA750255893E1006DF13A /* Localizable.strings in Resources */,
 				ED54A58E25562AA000A5175D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +470,7 @@
 				ED27E0512557C318007B98DF /* PeopleDetailView.swift in Sources */,
 				ED5E584B25574026002CCE1F /* API.swift in Sources */,
 				ED27E01225575DD7007B98DF /* PeopleService.swift in Sources */,
+				ED7BA758255894A0006DF13A /* Localizable.swift in Sources */,
 				ED27E0462557BEB1007B98DF /* PeopleDetailService.swift in Sources */,
 				ED27E00B2557588F007B98DF /* Requester.swift in Sources */,
 				ED5E5851255741E6002CCE1F /* Network.swift in Sources */,
@@ -494,6 +510,17 @@
 			targetProxy = ED54A5A325562AA000A5175D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED7BA752255893E1006DF13A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED7BA751255893E1006DF13A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ED54A5A925562AA000A5175D /* Debug */ = {
