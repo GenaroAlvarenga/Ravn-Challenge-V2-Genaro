@@ -37,9 +37,17 @@ struct PeopleDetailView_Previews: PreviewProvider {
 
 struct PeopleDetailListView: View {
     let detail: StarWarsPersonDetail
+    
+    init(detail: StarWarsPersonDetail) {
+        self.detail = detail
+        UITableViewHeaderFooterView.appearance().tintColor = .clear
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
+    }
+    
     var body: some View {
         List {
-            Section(header: Text("General Information")) {
+            Section(header: CustomHeaderView(text: "General Information")) {
                 ForEach(detail.details) { detail in
                     HStack {
                         Text(detail.type)
@@ -52,7 +60,7 @@ struct PeopleDetailListView: View {
                 }
             }
             if !detail.vehicles.isEmpty {
-                Section(header: Text("Vehicles")) {
+                Section(header: CustomHeaderView(text: "Vehicles")) {
                     ForEach(detail.vehicles) { vehicle in
                         HStack {
                             Text(vehicle.name)
@@ -64,5 +72,24 @@ struct PeopleDetailListView: View {
                 }
             }
         }
+    }
+}
+
+struct CustomHeaderView: View {
+    let text: String
+    var body: some View {
+        HStack {
+                Text(text)
+                    .font(.headline)
+                    .foregroundColor(.black)
+                    .padding()
+                    Spacer()
+            }
+            .background(Color.white)
+            .listRowInsets(EdgeInsets(
+                top: 0,
+                leading: 0,
+                bottom: 0,
+                trailing: 0))
     }
 }
