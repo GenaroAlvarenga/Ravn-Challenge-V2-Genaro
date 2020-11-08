@@ -14,24 +14,57 @@ struct PeopleView: View {
         NavigationView {
             List {
                 ForEach(viewModel.people) { person in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(person.name)
-                                .bold()
-                            Text(person.species)
+                    PersonCell(person: person)
+                    .onAppear(perform: {
+                        if viewModel.people.last == person {
+                            viewModel.fetchPeople()
                         }
-                        Spacer()
-                    }
+                    })
+                    .padding(.all, 10)
                 }
-                .onMove(perform: { indices, newOffset in
-                    // push
-                })
-                LoadingView(onLoad: { viewModel.fetchPeople() })
+                if !(viewModel.error is CustomError) {
+                    Text(viewModel.error.localizedDescription)
+                        .foregroundColor(.red)
+                        .padding(.all, 10)
+                } else if viewModel.cantLoadMore {
+                    LoadingView()
+                }
             }
             .navigationTitle("People of Star Wars")
+            .onAppear(perform: { viewModel.fetchPeople() })
         }
         
         .statusBar(hidden: true)
+    }
+}
+
+struct PersonCell: View {
+    let person: StarWarsPerson
+
+    var body: some View {
+        NavigationLink(
+            destination: Text(person.name)) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(person.name)
+                        .bold()
+                    Text(person.species)
+                        .font(.callout)
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+            }
+        }
+    }
+}
+
+struct LoadingView: View {
+    var body: some View {
+        HStack {
+            Spacer()
+            ProgressView()
+            Spacer()
+        }
     }
 }
 
@@ -51,20 +84,5 @@ struct PeopleView_Previews: PreviewProvider {
     }()
     static var previews: some View {
         PeopleView(viewModel: PeopleView_Previews.viewModel)
-    }
-}
-
-struct LoadingView: View {
-    let onLoad: (() -> Void)
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            ProgressView()
-                .onAppear(perform: {
-                    onLoad()
-                })
-            Spacer()
-        }
     }
 }

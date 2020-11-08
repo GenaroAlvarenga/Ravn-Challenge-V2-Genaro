@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CombineExt
 
 enum CustomError: Error {
     case noConnection
@@ -16,32 +17,45 @@ class PeopleViewModel: ObservableObject {
     @Published var people = [StarWarsPerson]()
     @Published var isLoading = false
     @Published var error: Error = CustomError.noConnection
+    @Published var cantLoadMore = true
     private let peopleService: PopleServiceType
+    
+    let fetchPeopleRequest = PassthroughRelay<Void>()
+    private var subscriptions = Set<AnyCancellable>()
     
     init(peopleService: PopleServiceType = PopleService()) {
         self.peopleService = peopleService
+        
+        let fetchPeopleResult = fetchPeopleRequest
+            .flatMapLatest {
+                peopleService.getPeople().materialize()
+            }.share()
+        
+        let searchSucces = fetchPeopleResult
+            .values()
+            .sink(receiveValue: { [weak self] newPeople in
+                self?.people.append(contentsOf: newPeople)
+                self?.cantLoadMore = self?.peopleService.cantLoadMore ?? true
+            })
+            .store(in: &subscriptions)
+
+        let searchFailure = fetchPeopleResult
+            .failures()
+            .assign(to: \.error, on: self, ownership: .weak)
+            .store(in: &subscriptions)
+        
+        fetchPeopleRequest
+            .map { _ in true }
+            .merge(with: fetchPeopleResult.map { _ in false })
+            .assign(to: \.isLoading, on: self, ownership: .weak)
+            .store(in: &subscriptions)
+        
     }
 
     func fetchPeople() {
-        if !isLoading {
+        if !isLoading, peopleService.cantLoadMore {
             isLoading.toggle()
-            getAllPeople()
+            fetchPeopleRequest.accept()
         }
-    }
-    
-    // Example of service
-    func getAllPeople() {
-//        peopleService.getPeople().sink { [weak self] result in
-//            switch result {
-//            case .failure(let error):
-//                print(error)
-//            case .finished:
-//                print("Nothing")
-//            }
-//            self?.isLoading.toggle()
-//        } receiveValue: { [weak self] people in
-//            self?.people.append(contentsOf: people)
-//        }
-//        .store(in: &subscriptions)
     }
 }

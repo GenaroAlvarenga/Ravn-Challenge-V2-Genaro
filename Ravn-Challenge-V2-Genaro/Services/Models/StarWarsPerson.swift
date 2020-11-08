@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StarWarsPerson: Identifiable {
+struct StarWarsPerson: Identifiable, Equatable {
     
     let id: String
     let name: String

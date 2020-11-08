@@ -14,7 +14,6 @@
 		ED27E020255784BC007B98DF /* StarWarsPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27E01F255784BC007B98DF /* StarWarsPerson.swift */; };
 		ED27E02625579E16007B98DF /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = ED27E02525579E16007B98DF /* CombineExt */; };
 		ED54A58A25562A9E00A5175D /* Ravn_Challenge_V2_GenaroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54A58925562A9E00A5175D /* Ravn_Challenge_V2_GenaroApp.swift */; };
-		ED54A58C25562A9E00A5175D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54A58B25562A9E00A5175D /* ContentView.swift */; };
 		ED54A58E25562AA000A5175D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED54A58D25562AA000A5175D /* Assets.xcassets */; };
 		ED54A59125562AA000A5175D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED54A59025562AA000A5175D /* Preview Assets.xcassets */; };
 		ED54A59C25562AA000A5175D /* Ravn_Challenge_V2_GenaroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54A59B25562AA000A5175D /* Ravn_Challenge_V2_GenaroTests.swift */; };
@@ -50,7 +49,6 @@
 		ED27E01F255784BC007B98DF /* StarWarsPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsPerson.swift; sourceTree = "<group>"; };
 		ED54A58625562A9E00A5175D /* Ravn-Challenge-V2-Genaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ravn-Challenge-V2-Genaro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED54A58925562A9E00A5175D /* Ravn_Challenge_V2_GenaroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ravn_Challenge_V2_GenaroApp.swift; sourceTree = "<group>"; };
-		ED54A58B25562A9E00A5175D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED54A58D25562AA000A5175D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED54A59025562AA000A5175D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED54A59225562AA000A5175D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,9 +103,8 @@
 		ED27DFFF255757E2007B98DF /* People */ = {
 			isa = PBXGroup;
 			children = (
-				ED54A58B25562A9E00A5175D /* ContentView.swift */,
-				ED27E0012557580C007B98DF /* PeopleViewModel.swift */,
 				ED27E019255782E2007B98DF /* PeopleView.swift */,
+				ED27E0012557580C007B98DF /* PeopleViewModel.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -388,7 +385,6 @@
 				ED5E585725574263002CCE1F /* AllPeopleRequest.swift in Sources */,
 				ED27E0022557580C007B98DF /* PeopleViewModel.swift in Sources */,
 				ED27E01A255782E2007B98DF /* PeopleView.swift in Sources */,
-				ED54A58C25562A9E00A5175D /* ContentView.swift in Sources */,
 				ED5E584B25574026002CCE1F /* API.swift in Sources */,
 				ED27E01225575DD7007B98DF /* PeopleService.swift in Sources */,
 				ED27E00B2557588F007B98DF /* Requester.swift in Sources */,
