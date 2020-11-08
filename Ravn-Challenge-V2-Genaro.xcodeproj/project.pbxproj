@@ -10,8 +10,11 @@
 		ED27E0022557580C007B98DF /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27E0012557580C007B98DF /* PeopleViewModel.swift */; };
 		ED27E00B2557588F007B98DF /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27E00A2557588F007B98DF /* Requester.swift */; };
 		ED27E01225575DD7007B98DF /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27E01125575DD7007B98DF /* PeopleService.swift */; };
+		ED27E01A255782E2007B98DF /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27E019255782E2007B98DF /* PeopleView.swift */; };
+		ED27E020255784BC007B98DF /* StarWarsPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27E01F255784BC007B98DF /* StarWarsPerson.swift */; };
+		ED27E02625579E16007B98DF /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = ED27E02525579E16007B98DF /* CombineExt */; };
+		ED27E0332557B46F007B98DF /* PeopleViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27E0322557B46F007B98DF /* PeopleViewModelTest.swift */; };
 		ED54A58A25562A9E00A5175D /* Ravn_Challenge_V2_GenaroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54A58925562A9E00A5175D /* Ravn_Challenge_V2_GenaroApp.swift */; };
-		ED54A58C25562A9E00A5175D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54A58B25562A9E00A5175D /* ContentView.swift */; };
 		ED54A58E25562AA000A5175D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED54A58D25562AA000A5175D /* Assets.xcassets */; };
 		ED54A59125562AA000A5175D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED54A59025562AA000A5175D /* Preview Assets.xcassets */; };
 		ED54A59C25562AA000A5175D /* Ravn_Challenge_V2_GenaroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54A59B25562AA000A5175D /* Ravn_Challenge_V2_GenaroTests.swift */; };
@@ -43,9 +46,11 @@
 		ED27E0012557580C007B98DF /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		ED27E00A2557588F007B98DF /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 		ED27E01125575DD7007B98DF /* PeopleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
+		ED27E019255782E2007B98DF /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
+		ED27E01F255784BC007B98DF /* StarWarsPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsPerson.swift; sourceTree = "<group>"; };
+		ED27E0322557B46F007B98DF /* PeopleViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModelTest.swift; sourceTree = "<group>"; };
 		ED54A58625562A9E00A5175D /* Ravn-Challenge-V2-Genaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ravn-Challenge-V2-Genaro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED54A58925562A9E00A5175D /* Ravn_Challenge_V2_GenaroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ravn_Challenge_V2_GenaroApp.swift; sourceTree = "<group>"; };
-		ED54A58B25562A9E00A5175D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED54A58D25562AA000A5175D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED54A59025562AA000A5175D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED54A59225562AA000A5175D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED27E02625579E16007B98DF /* CombineExt in Frameworks */,
 				ED5E583D25573D77002CCE1F /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,7 +105,7 @@
 		ED27DFFF255757E2007B98DF /* People */ = {
 			isa = PBXGroup;
 			children = (
-				ED54A58B25562A9E00A5175D /* ContentView.swift */,
+				ED27E019255782E2007B98DF /* PeopleView.swift */,
 				ED27E0012557580C007B98DF /* PeopleViewModel.swift */,
 			);
 			path = People;
@@ -116,6 +122,7 @@
 		ED27E00F25575D8B007B98DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ED27E01E255784A1007B98DF /* Models */,
 				ED27E01025575D93007B98DF /* People */,
 			);
 			path = Services;
@@ -125,6 +132,30 @@
 			isa = PBXGroup;
 			children = (
 				ED27E01125575DD7007B98DF /* PeopleService.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		ED27E01E255784A1007B98DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED27E01F255784BC007B98DF /* StarWarsPerson.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED27E0302557B43A007B98DF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				ED27E0312557B441007B98DF /* People */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		ED27E0312557B441007B98DF /* People */ = {
+			isa = PBXGroup;
+			children = (
+				ED27E0322557B46F007B98DF /* PeopleViewModelTest.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -177,6 +208,7 @@
 		ED54A59A25562AA000A5175D /* Ravn-Challenge-V2-GenaroTests */ = {
 			isa = PBXGroup;
 			children = (
+				ED27E0302557B43A007B98DF /* Modules */,
 				ED54A59B25562AA000A5175D /* Ravn_Challenge_V2_GenaroTests.swift */,
 				ED54A59D25562AA000A5175D /* Info.plist */,
 			);
@@ -229,6 +261,7 @@
 			name = "Ravn-Challenge-V2-Genaro";
 			packageProductDependencies = (
 				ED5E583C25573D77002CCE1F /* Apollo */,
+				ED27E02525579E16007B98DF /* CombineExt */,
 			);
 			productName = "Ravn-Challenge-V2-Genaro";
 			productReference = ED54A58625562A9E00A5175D /* Ravn-Challenge-V2-Genaro.app */;
@@ -303,6 +336,7 @@
 			mainGroup = ED54A57D25562A9E00A5175D;
 			packageReferences = (
 				ED5E583B25573D77002CCE1F /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				ED27E02425579E16007B98DF /* XCRemoteSwiftPackageReference "CombineExt" */,
 			);
 			productRefGroup = ED54A58725562A9E00A5175D /* Products */;
 			projectDirPath = "";
@@ -369,12 +403,13 @@
 			files = (
 				ED5E585725574263002CCE1F /* AllPeopleRequest.swift in Sources */,
 				ED27E0022557580C007B98DF /* PeopleViewModel.swift in Sources */,
-				ED54A58C25562A9E00A5175D /* ContentView.swift in Sources */,
+				ED27E01A255782E2007B98DF /* PeopleView.swift in Sources */,
 				ED5E584B25574026002CCE1F /* API.swift in Sources */,
 				ED27E01225575DD7007B98DF /* PeopleService.swift in Sources */,
 				ED27E00B2557588F007B98DF /* Requester.swift in Sources */,
 				ED5E5851255741E6002CCE1F /* Network.swift in Sources */,
 				ED54A58A25562A9E00A5175D /* Ravn_Challenge_V2_GenaroApp.swift in Sources */,
+				ED27E020255784BC007B98DF /* StarWarsPerson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED54A59C25562AA000A5175D /* Ravn_Challenge_V2_GenaroTests.swift in Sources */,
+				ED27E0332557B46F007B98DF /* PeopleViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +732,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		ED27E02425579E16007B98DF /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		ED5E583B25573D77002CCE1F /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -707,6 +751,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		ED27E02525579E16007B98DF /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED27E02425579E16007B98DF /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
 		ED5E583C25573D77002CCE1F /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ED5E583B25573D77002CCE1F /* XCRemoteSwiftPackageReference "apollo-ios" */;

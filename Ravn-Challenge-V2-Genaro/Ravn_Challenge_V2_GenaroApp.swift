@@ -11,7 +11,7 @@ import SwiftUI
 struct Ravn_Challenge_V2_GenaroApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PeopleView(viewModel: PeopleViewModel())
         }
     }
 }
